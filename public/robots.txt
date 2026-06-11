@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jostcuro.github.io/Landing-Page-EDEN/sitemap.xml
