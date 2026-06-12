@@ -50,7 +50,7 @@ export const products = [
     category: 'Cuerpo',
     description: 'Fragancia especiada con cardamomo y cedro. Reparación nocturna avanzada.',
     price: 42.99,
-    image: 'https://images.unsplash.com/photo-1585232004423-244e0e6904e3?w=600&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1615396899839-c99c121888b0?w=600&h=600&fit=crop',
     badge: 'Edición Limitada'
   }
 ]
