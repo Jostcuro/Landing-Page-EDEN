@@ -15,7 +15,7 @@
     "premium",
     "artesanal"
   ],
-  "author": "EDEN",
+  "author": "Johan Steven Cuero Rodríguez",
   "license": "ISC",
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.0",

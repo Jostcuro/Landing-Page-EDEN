@@ -56,7 +56,7 @@ export async function initFooter() {
         </div>
 
         <div class="border-t border-eden-800/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p class="text-sm text-eden-500">&copy; ${new Date().getFullYear()} EDEN. Todos los derechos reservados.</p>
+          <p class="text-sm text-eden-500">&copy; ${new Date().getFullYear()} Johan Steven Cuero Rodríguez. Todos los derechos reservados.</p>
           <button id="back-to-top" class="w-10 h-10 rounded-full bg-eden-800/50 flex items-center justify-center text-eden-400 hover:bg-gold-500 hover:text-eden-950 transition-all duration-300" aria-label="Volver arriba">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
           </button>
