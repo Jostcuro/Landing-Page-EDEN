@@ -6,8 +6,8 @@ export async function initFAQ() {
   if (!main) return
 
   const itemsHTML = faq.map((item, i) => `
-    <div class="faq-item border-b border-eden-200 last:border-0" data-gsap="fade-up" data-aos="fade-up" data-aos-delay="${i * 80}">
-      <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false" aria-controls="faq-answer-${i}">
+    <div class="faq-item border-b border-eden-200 last:border-0" data-aos="fade-up" data-aos-delay="${i * 80}">
+      <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" aria-expanded="false" aria-controls="faq-answer-${i}" id="faq-heading-${i}">
         <span class="font-display text-lg font-medium text-eden-900 group-hover:text-gold-600 transition-colors pr-4">${item.question}</span>
         <span class="flex-shrink-0 w-10 h-10 rounded-full bg-eden-100 flex items-center justify-center text-eden-600 transition-all duration-300 group-hover:bg-gold-400 group-hover:text-eden-950">
           <svg class="faq-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
@@ -62,13 +62,6 @@ export async function initFAQ() {
         toggle.setAttribute('aria-expanded', 'true')
         gsap.to(answer, { height: 'auto', duration: 0.4, ease: 'power2.out' })
         gsap.to(icon, { rotation: 45, duration: 0.3 })
-      }
-    })
-
-    toggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault()
-        toggle.click()
       }
     })
   })

@@ -6,12 +6,9 @@ gsap.registerPlugin(ScrollTrigger)
 export function initGSAP() {
   gsap.config({ nullTargetWarn: false, trialWarn: false })
 
-  gsap.set('[data-gsap]', { opacity: 0 })
-
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   if (prefersReduced) {
-    gsap.globalTimeline.timeScale(0)
-    document.querySelectorAll('[data-gsap]').forEach(el => gsap.set(el, { opacity: 1 }))
+    document.querySelectorAll('[data-gsap]').forEach(el => { el.style.opacity = 1 })
     return
   }
 
@@ -78,25 +75,28 @@ export function initGSAP() {
 
 export function createHoverLift(element, options = {}) {
   const { y = -8, scale = 1.02, duration = 0.3, ease = 'power2.out' } = options
-  let tween
-  element.addEventListener('mouseenter', () => {
-    tween = gsap.to(element, { y, scale, duration, ease, overwrite: true })
-  })
-  element.addEventListener('mouseleave', () => {
-    gsap.to(element, { y: 0, scale: 1, duration, ease, overwrite: true })
-  })
-  return () => { element.removeEventListener('mouseenter', tween); element.removeEventListener('mouseleave', tween) }
+  const onEnter = () => gsap.to(element, { y, scale, duration, ease, overwrite: true })
+  const onLeave = () => gsap.to(element, { y: 0, scale: 1, duration, ease, overwrite: true })
+  element.addEventListener('mouseenter', onEnter)
+  element.addEventListener('mouseleave', onLeave)
+  return () => {
+    element.removeEventListener('mouseenter', onEnter)
+    element.removeEventListener('mouseleave', onLeave)
+  }
 }
 
 export function createRipple(element) {
   element.addEventListener('click', (e) => {
     const rect = element.getBoundingClientRect()
     const ripple = document.createElement('span')
-    ripple.className = 'absolute rounded-full bg-white/30 pointer-events-none animate-ripple'
-    const size = Math.max(rect.width, rect.height)
-    ripple.style.width = ripple.style.height = `${size}px`
-    ripple.style.left = `${e.clientX - rect.left - size / 2}px`
-    ripple.style.top = `${e.clientY - rect.top - size / 2}px`
+    ripple.className = 'absolute rounded-full bg-white/30 pointer-events-none'
+    ripple.style.cssText = `
+      width: ${Math.max(rect.width, rect.height)}px;
+      height: ${Math.max(rect.width, rect.height)}px;
+      left: ${e.clientX - rect.left - Math.max(rect.width, rect.height) / 2}px;
+      top: ${e.clientY - rect.top - Math.max(rect.width, rect.height) / 2}px;
+      animation: ripple-expand 0.6s ease-out forwards;
+    `
     element.appendChild(ripple)
     setTimeout(() => ripple.remove(), 600)
   })

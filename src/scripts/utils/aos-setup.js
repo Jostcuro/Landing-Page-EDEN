@@ -16,8 +16,8 @@ export function initAOS() {
     startEvent: 'DOMContentLoaded',
   })
 
-  if (!prefersReduced) {
-    document.addEventListener('lenis:scroll', () => AOS.refresh())
+  if (!prefersReduced && window.lenis) {
+    window.lenis.on('scroll', () => AOS.refresh())
   }
 
   window.AOS = AOS

@@ -2,7 +2,6 @@ import './styles/main.css'
 import { initLenis } from './scripts/utils/lenis-setup.js'
 import { initGSAP } from './scripts/utils/gsap-animations.js'
 import { initAOS } from './scripts/utils/aos-setup.js'
-
 import { initNavbar } from './scripts/components/Navbar.js'
 import { initHero } from './scripts/components/Hero.js'
 import { initBenefits } from './scripts/components/Benefits.js'
@@ -16,8 +15,6 @@ import { initScrollProgress } from './scripts/utils/scroll-progress.js'
 
 async function bootstrap() {
   initLenis()
-  initGSAP()
-  initAOS()
   initScrollProgress()
 
   await initNavbar()
@@ -29,6 +26,9 @@ async function bootstrap() {
   await initFAQ()
   await initNewsletter()
   await initFooter()
+
+  initGSAP()
+  initAOS()
 
   document.documentElement.classList.add('loaded')
 }

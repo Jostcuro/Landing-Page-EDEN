@@ -6,7 +6,7 @@ export async function initBenefits() {
   if (!main) return
 
   const cardsHTML = benefits.map((b, i) => `
-    <div class="card group p-8 text-center" data-gsap="scale-in" data-aos="fade-up" data-aos-delay="${i * 100}">
+    <div class="card group p-8 text-center" data-aos="fade-up" data-aos-delay="${i * 100}">
       <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-eden-100 text-eden-700 flex items-center justify-center transition-all duration-500 group-hover:bg-gold-400 group-hover:text-eden-950 group-hover:shadow-lg group-hover:shadow-gold-400/20">
         ${b.icon}
       </div>

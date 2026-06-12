@@ -71,7 +71,7 @@ export async function initProductsGallery() {
     spaceBetween: 20,
     freeMode: { enabled: true, momentum: true },
     navigation: { nextEl: '.swiper-btn-next', prevEl: '.swiper-btn-prev' },
-    pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+    pagination: { el: '.products-swiper .swiper-pagination', clickable: true, dynamicBullets: true },
     breakpoints: {
       640: { slidesPerView: 2, spaceBetween: 24 },
       1024: { slidesPerView: 3, spaceBetween: 28 }
