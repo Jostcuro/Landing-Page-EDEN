@@ -1,5 +1,12 @@
-import { sendNewsletterEmail, validateEmail } from '../utils/emailjs-setup.js'
 import { createRipple } from '../utils/gsap-animations.js'
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+function simulateSend() {
+  return new Promise(resolve => setTimeout(() => resolve({ success: true }), 1500))
+}
 
 export async function initNewsletter() {
   const main = document.getElementById('main-content')
@@ -72,15 +79,13 @@ export async function initNewsletter() {
     btnLoading.classList.remove('hidden')
 
     try {
-      const result = await sendNewsletterEmail(email)
+      const result = await simulateSend()
       if (result.success) {
         showMessage('¡Gracias por suscribirte! Revisa tu email.', 'success')
         form.reset()
-      } else {
-        showMessage('Hubo un error. Intenta de nuevo.', 'error')
       }
     } catch {
-      showMessage('Error de conexión. Intenta más tarde.', 'error')
+      showMessage('Hubo un error. Intenta de nuevo.', 'error')
     } finally {
       btn.disabled = false
       btnText.classList.remove('hidden')

@@ -2,7 +2,7 @@ import './styles/main.css'
 import { initLenis } from './scripts/utils/lenis-setup.js'
 import { initGSAP } from './scripts/utils/gsap-animations.js'
 import { initAOS } from './scripts/utils/aos-setup.js'
-import { initEmailJS } from './scripts/utils/emailjs-setup.js'
+
 import { initNavbar } from './scripts/components/Navbar.js'
 import { initHero } from './scripts/components/Hero.js'
 import { initBenefits } from './scripts/components/Benefits.js'
@@ -18,7 +18,6 @@ async function bootstrap() {
   initLenis()
   initGSAP()
   initAOS()
-  initEmailJS()
   initScrollProgress()
 
   await initNavbar()
