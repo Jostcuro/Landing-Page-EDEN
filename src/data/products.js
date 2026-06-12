@@ -32,7 +32,7 @@ export const products = [
     category: 'Rostro',
     description: 'Fragancia suave de peonía. Fórmula ligera para el cuidado diario del rostro.',
     price: 44.99,
-    image: 'https://images.unsplash.com/photo-1570194065650-d99fb4b38b17?w=600&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=600&h=600&fit=crop',
     badge: 'Premium'
   },
   {
