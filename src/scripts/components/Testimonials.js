@@ -1,7 +1,6 @@
 import Swiper from 'swiper'
-import { Autoplay, Pagination } from 'swiper/modules'
+import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
-import 'swiper/css/pagination'
 import { testimonials } from '../../data/products.js'
 
 function renderStars(rating) {
@@ -44,11 +43,10 @@ export async function initTestimonials() {
           <h2 class="section-title">Lo que dicen nuestros clientes</h2>
           <p class="section-subtitle mx-auto">Miles de personas ya confían en EDEN para el cuidado diario de su piel.</p>
         </div>
-        <div class="swiper testimonials-swiper pb-14" data-gsap="fade-up">
+        <div class="swiper testimonials-swiper pb-4" data-gsap="fade-up">
           <div class="swiper-wrapper">
             ${slidesHTML}
           </div>
-          <div class="swiper-pagination mt-8"></div>
         </div>
       </div>
     </section>
@@ -57,11 +55,10 @@ export async function initTestimonials() {
   main.insertAdjacentHTML('beforeend', sectionHTML)
 
   new Swiper('.testimonials-swiper', {
-    modules: [Autoplay, Pagination],
+    modules: [Autoplay],
     slidesPerView: 1,
     spaceBetween: 24,
     autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-    pagination: { el: '.testimonials-swiper .swiper-pagination', clickable: true },
     breakpoints: {
       640: { slidesPerView: 2 },
       1024: { slidesPerView: 3 }

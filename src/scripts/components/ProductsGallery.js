@@ -1,8 +1,7 @@
 import Swiper from 'swiper'
-import { Navigation, Pagination, FreeMode } from 'swiper/modules'
+import { Navigation, FreeMode } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import 'swiper/css/pagination'
 import 'swiper/css/free-mode'
 import { products } from '../../data/products.js'
 import { createHoverLift, createRipple } from '../utils/gsap-animations.js'
@@ -53,11 +52,10 @@ export async function initProductsGallery() {
           </div>
         </div>
 
-        <div class="swiper products-swiper pb-16" data-gsap="fade-up">
+        <div class="swiper products-swiper pb-4" data-gsap="fade-up">
           <div class="swiper-wrapper">
             ${slidesHTML}
           </div>
-          <div class="swiper-pagination mt-8"></div>
         </div>
       </div>
     </section>
@@ -66,12 +64,11 @@ export async function initProductsGallery() {
   main.insertAdjacentHTML('beforeend', sectionHTML)
 
   new Swiper('.products-swiper', {
-    modules: [Navigation, Pagination, FreeMode],
+    modules: [Navigation, FreeMode],
     slidesPerView: 1,
     spaceBetween: 20,
     freeMode: { enabled: true, momentum: true },
     navigation: { nextEl: '.swiper-btn-next', prevEl: '.swiper-btn-prev' },
-    pagination: { el: '.products-swiper .swiper-pagination', clickable: true, dynamicBullets: true },
     breakpoints: {
       640: { slidesPerView: 2, spaceBetween: 24 },
       1024: { slidesPerView: 3, spaceBetween: 28 }
