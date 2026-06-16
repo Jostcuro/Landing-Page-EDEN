@@ -23,7 +23,7 @@ export async function initBenefits() {
           <h2 class="section-title">El cuidado que tu piel merece</h2>
           <p class="section-subtitle mx-auto">Creemos en la belleza natural. Cada loción está diseñada para nutrir, proteger y consentir tu piel con los mejores ingredientes de la naturaleza.</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-4 lg:gap-6">
           ${cardsHTML}
         </div>
       </div>

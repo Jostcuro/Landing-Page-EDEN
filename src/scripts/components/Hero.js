@@ -41,7 +41,7 @@ export async function initHero() {
             </a>
           </div>
 
-          <div class="flex items-center gap-8 mt-14" data-gsap="fade-up">
+          <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mt-12 sm:mt-14" data-gsap="fade-up">
             <div>
               <p class="font-display text-3xl font-medium text-white">50K+</p>
               <p class="text-sm text-eden-300/70 mt-1">Clientes felices</p>

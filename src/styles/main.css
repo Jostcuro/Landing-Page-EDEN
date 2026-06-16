@@ -103,11 +103,13 @@
   .btn-gold:hover { background: linear-gradient(135deg, var(--color-gold-500), var(--color-gold-600)); box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--color-gold-500) 30%, transparent); }
   .btn-gold:active { transform: scale(0.98); }
 
-  .section { padding: 4rem 1rem; }
-  @media (min-width: 768px) { .section { padding: 6rem 2rem; } }
-  @media (min-width: 1024px) { .section { padding: 8rem 4rem; } }
+  .section { padding: 3rem 1rem; }
+  @media (min-width: 768px) { .section { padding: 5rem 2rem; } }
+  @media (min-width: 1024px) { .section { padding: 7rem 3rem; } }
 
-  .container { max-width: 80rem; margin-left: auto; margin-right: auto; }
+  .container { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+  @media (min-width: 768px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
+  @media (min-width: 1024px) { .container { padding-left: 2rem; padding-right: 2rem; } }
   .section-title { font-family: var(--font-display); font-size: 1.875rem; font-weight: 500; letter-spacing: -0.025em; color: var(--color-eden-900); }
   @media (min-width: 768px) { .section-title { font-size: 2.25rem; } }
   @media (min-width: 1024px) { .section-title { font-size: 3rem; } }

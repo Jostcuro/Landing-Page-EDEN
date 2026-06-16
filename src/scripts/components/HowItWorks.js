@@ -32,7 +32,7 @@ export async function initHowItWorks() {
           <h2 class="section-title">Fácil como contar hasta 4</h2>
           <p class="section-subtitle mx-auto">Obtener tu loción favorita es un proceso simple y disfrutable de principio a fin.</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-4 lg:gap-6 max-w-4xl mx-auto">
           ${stepsHTML}
         </div>
       </div>
